@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:plantapp/components/bottom_bar.dart';
 import 'package:plantapp/constants.dart';
 import 'package:plantapp/screens/home/components/body.dart';
 
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
+      bottomNavigationBar: BottomBar(),
     );
   }
 
@@ -21,8 +23,8 @@ class HomeScreen extends StatelessWidget {
       iconTheme: const IconThemeData(color: Colors.white),
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/menu.svg", color: Colors.white),
-        onPressed: () {}, 
-        ),
+        onPressed: () {},
+      ),
     );
   }
 }
