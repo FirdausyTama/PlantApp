@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:plantapp/constants.dart';
+import 'package:plantapp/screens/alamat/map_page.dart';
 import 'package:plantapp/screens/camera/native_camera.dart';
 import 'package:plantapp/screens/camera/storage_helper.dart';
 
@@ -17,6 +18,7 @@ class HomePageCamera extends StatefulWidget {
 class _HomePageState extends State<HomePageCamera> {
   File? _imageFile;
   bool _isLoading = false;
+  String? alamatDipilih;
 
   Future<void> _requestPermission() async {
     await Permission.camera.request();
@@ -166,6 +168,7 @@ class _HomePageState extends State<HomePageCamera> {
                                 style: const TextStyle(fontSize: 12),
                               ),
                             ),
+                            
 
                             const SizedBox(height: 15),
 
@@ -174,7 +177,10 @@ class _HomePageState extends State<HomePageCamera> {
                                 Expanded(
                                   child: ElevatedButton.icon(
                                     onPressed: _deleteImage,
-                                    icon: const Icon(Icons.delete_outline, color: Colors.black,),
+                                    icon: const Icon(
+                                      Icons.delete_outline,
+                                      color: Colors.black,
+                                    ),
                                     label: const Text('Hapus'),
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.red[50],
@@ -194,7 +200,10 @@ class _HomePageState extends State<HomePageCamera> {
                                         Colors.blue,
                                       );
                                     },
-                                    icon: const Icon(Icons.save, color: Colors.white,),
+                                    icon: const Icon(
+                                      Icons.save,
+                                      color: Colors.white,
+                                    ),
                                     label: const Text('Simpan'),
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: kPrimaryColor,
@@ -271,7 +280,11 @@ class _HomePageState extends State<HomePageCamera> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.camera_alt, size: 40, color: Colors.white,),
+                            Icon(
+                              Icons.camera_alt,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                             const SizedBox(height: 8),
                             const Text(
                               'Ambil Foto',
@@ -305,7 +318,11 @@ class _HomePageState extends State<HomePageCamera> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.photo_library, size: 40, color: kPrimaryColor,),
+                            Icon(
+                              Icons.photo_library,
+                              size: 40,
+                              color: kPrimaryColor,
+                            ),
                             const SizedBox(height: 8),
                             const Text(
                               'Pilih dari Galeri',
@@ -322,6 +339,7 @@ class _HomePageState extends State<HomePageCamera> {
                   ),
                 ],
               ),
+              
             ],
           ),
         ),
