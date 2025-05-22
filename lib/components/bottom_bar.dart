@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:plantapp/constants.dart';
+import 'package:plantapp/screens/alamat/map_page.dart';
+import 'package:plantapp/screens/camera/home_camera.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({
@@ -37,7 +39,14 @@ class BottomBar extends StatelessWidget {
               height: 40,
               colorFilter: ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
             ),
-            onPressed: () {},
+            onPressed: () {
+            Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MapPage(),
+                        ),
+            );
+          },
           ),
           IconButton(
             icon: SvgPicture.asset(
@@ -46,7 +55,12 @@ class BottomBar extends StatelessWidget {
               height: 35,
               colorFilter: ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePageCamera()),
+            );
+            },
           ),
           IconButton(
             icon: SvgPicture.asset(
